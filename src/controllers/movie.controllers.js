@@ -54,8 +54,8 @@ const setDirectors = catchError(async (req,res) => {
 
   await movie.setDirectors(req.body)
 
-  const directors = await MediaDeviceInfo.getDirectors()
-  return req.json(directors)
+  const directors = await movie.getDirectors()
+  return res.json(directors)
 })
 
 const setActors = catchError(async (req,res) => {
